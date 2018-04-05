@@ -111,3 +111,86 @@ git stash pop stash@{0}
 git stash apply
 git stash drop stash@{0}
 git stash clear
+
+
+
+------------------------
+read -p 'Enter number 1 : ' a
+s=$(($a+$b))
+div=$( echo "scale=3;$a / $b" | bc)
+rev=$( echo "$str" | rev)
+
+
+if [ "$str" == "$reverse" ]
+then
+	echo "Palindrome"
+else
+	echo "Not palindrome"
+fi
+
+
+if(($a>$b))
+then 
+	if(($a>$c))
+	then
+	l=$a;
+	else 
+	l=$c
+	fi
+elif(($b>$c))
+then
+	l=$b
+else
+	l=$c
+fi
+
+
+
+for((i=1;$i<=$n;i++))
+do
+f=$(($f*$i))
+done
+
+
+
+while((n>0))
+do 
+t=$(($n%10))
+s=$(($s+$t))
+n=$(($n/10))
+done
+
+
+while :
+do
+	echo "enter your choice"
+	read c
+	case $c in
+	1)
+		echo "1"
+		read enterkey;;
+	2)
+		echo "2"
+		read enterkey;;
+	0)
+		echo "exiting"
+		exit 1;;
+	*)
+		echo "enter valid operator"
+		read enterkey;;
+	esac
+done
+
+read -p 'Enter the filename : ' filenm
+array=( $(find . -name $filenm\* -print) )
+temp=${#array[@]}
+if [[ $temp > 0 ]]
+then
+for i in ${array[@]}
+do
+    extension="${i##*.}"
+echo $extension
+done
+else
+	echo "No file conatining with name    $filenm   exist"
+fi
